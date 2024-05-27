@@ -7,6 +7,7 @@ import Error from "./pages/Error.jsx";
 const App = () => {
     return (
         <div>
+
        <BrowserRouter>
 <Routes>
     <Route path="/" element={<Home/>}/>

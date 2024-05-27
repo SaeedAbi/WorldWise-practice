@@ -1,8 +1,12 @@
+import PageNav from "../Components/PageNav/index.jsx";
 
 const Home = () => {
     return (
         <div>
-          WorldWise
+            <PageNav/>
+        <h1>
+            WorldWise
+        </h1>
         </div>
     );
 };

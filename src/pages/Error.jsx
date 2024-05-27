@@ -1,9 +1,10 @@
-import React from 'react';
+import PageNav from "../Components/PageNav/index.jsx";
 
 const Error = () => {
     return (
         <div>
-           Page Not Found :(
+            <PageNav/>
+          <h1>Page Not Found :(</h1>
         </div>
     );
 };
