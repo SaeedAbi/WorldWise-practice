@@ -1,8 +1,9 @@
 import {BrowserRouter, Route, Routes} from "react-router-dom";
-import Product from "./pages/Product.jsx";
-import Pricing from "./pages/Pricing.jsx";
-import Home from "./pages/home.jsx";
-import Error from "./pages/Error.jsx";
+import Product from "././pages/Product/Product";
+import AppLayout from "././pages/AppLayout/AppLayout";
+import Homepage from "./pages/HomePage/Homepage.jsx";
+import PageNotFound from "./pages/PageNotFound.jsx";
+import Pricing from "./pages/Product/Pricing.jsx";
 
 const App = () => {
     return (
@@ -10,10 +11,11 @@ const App = () => {
 
        <BrowserRouter>
 <Routes>
-    <Route path="/" element={<Home/>}/>
+    <Route path="/" element={<Homepage/>}/>
     <Route path="product" element={<Product/>} />
     <Route path="pricing" element={<Pricing/>} />
-    <Route path='*' element={<Error/>}/>
+    <Route path="app" element={<AppLayout/>} />
+    <Route path='*' element={<PageNotFound/>}/>
 </Routes>
        </BrowserRouter>
         </div>
