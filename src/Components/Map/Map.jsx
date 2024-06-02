@@ -4,6 +4,7 @@ import {MapContainer, Marker, Popup, TileLayer, useMap, useMapEvents} from "reac
 import {useContext, useEffect, useState} from "react";
 import useCities from "../../Hooks/useCities.jsx";
 import {useGeolocation} from "../../Hooks/useGeolocation.js";
+import {useUrlPosition} from "../../Hooks/useUrlPosition.js";
 import Button from "../Button/Button.jsx";
 
 const Map = () => {
@@ -12,9 +13,7 @@ const Map = () => {
     const [mapPosition, setMapPosition] = useState([40,0])
     const {isLoading:isLoadingPosition,position:geolocationPosition,getPosition}=useGeolocation()
 
-    const [searchParams,setSearchParams]= useSearchParams()
-        const mapLat=searchParams.get('lat')
-        const mapLng=searchParams.get('lng')
+    const [mapLat,mapLng]=useUrlPosition()
 
     useEffect(() => {
         if(mapLat && mapLng) setMapPosition([mapLat,mapLng])
@@ -27,7 +26,7 @@ if (geolocationPosition) setMapPosition([geolocationPosition.lat,geolocationPosi
     return (
         <div className={styles.mapContainer}>
             {!geolocationPosition && (<Button type='position' onClick={getPosition}>
-                {isLoadingPositi on ? 'Loading ...' : 'Use your position'}
+                {isLoadingPosition ? 'Loading ...' : 'Use your position'}
             </Button>)}
             <MapContainer center={mapPosition} zoom={6} scrollWheelZoom={true} className={styles.map}>
                 <TileLayer
