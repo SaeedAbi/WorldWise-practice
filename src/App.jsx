@@ -17,9 +17,9 @@ const App = () => {
 
     return (
         <AuthProvider>
-<CitiesProvider>
-       <BrowserRouter>
-<Routes>
+            <CitiesProvider>
+              <BrowserRouter>
+                <Routes>
     <Route index element={<Homepage/>}/>
     <Route path="product" element={<Product/>} />
     <Route path="login" element={<Login/>} />
@@ -31,11 +31,11 @@ const App = () => {
         <Route path='countries' element={<CountriesList/>}/>
         <Route path='form' element={<Form/>}/>
     </Route>
-    <Route path='*' element={<PageNotFound/>}/>
-</Routes>
-       </BrowserRouter>
-</CitiesProvider>
-        </AuthProvider>
+         <Route path='*' element={<PageNotFound/>}/>
+                </Routes>
+              </BrowserRouter>
+            </CitiesProvider>
+          </AuthProvider>
     );
 };
 
